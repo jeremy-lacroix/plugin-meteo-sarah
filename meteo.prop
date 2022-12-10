@@ -4,6 +4,7 @@
       "description": "donne la météo du jour",
       "version": "1",
       "city": "Paris",
+      "key": "fe5059aef22a26d76f18cbdaffd3750f",
 	  "Auteur": "Jérémy Lacroix",
 	  "Catégorie": "Speech"
     }
