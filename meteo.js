@@ -1,12 +1,12 @@
 exports.action = function(data, callback, config){
   
   if (!data.city){
-    var city = "Paris";
+    var city = config.modules.meteo.city;
   }
   else{
     var city = data.city;
   }
-  console.log(config.modules.meteo.city);
+  
   //Config API
   var key = "fe5059aef22a26d76f18cbdaffd3750f";
   var request = require('request');
