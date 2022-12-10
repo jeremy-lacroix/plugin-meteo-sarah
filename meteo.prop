@@ -3,6 +3,7 @@
     "meteo"  : {
       "description": "donne la météo du jour",
       "version": "1",
+      "city": "Paris",
 	  "Auteur": "Jérémy Lacroix",
 	  "Catégorie": "Speech"
     }

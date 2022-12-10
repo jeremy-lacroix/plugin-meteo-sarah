@@ -6,7 +6,7 @@ exports.action = function(data, callback, config){
   else{
     var city = data.city;
   }
-
+  console.log(config.modules.meteo.city);
   //Config API
   var key = "fe5059aef22a26d76f18cbdaffd3750f";
   var request = require('request');
@@ -28,22 +28,26 @@ exports.action = function(data, callback, config){
   });
 }
 
-//Create speech value
+//Create speech return value
 function text_meteo(result, city){
   if(result['weather'][0]['description'] == 'brume'){
-    var out = "A " + city + " il y a de la" + result['weather'][0]['description'] + ", la température actuel est de " + Math.round(result['main']['temp']) + " degrer , la température minimal est de " + Math.round(result["main"]["temp_min"]) + " degrer et la température maximal est de " + Math.round(result["main"]["temp_max"]) + " degrer selssuss ";
+    var out = "A " + city + " il y a de la" + result['weather'][0]['description'] + ", la température actuel est de " + Math.round(result['main']['temp']) + " degrer , la température minimal est de " + Math.round(result["main"]["temp_min"]) + " degrer et la température maximal est de " + Math.round(result["main"]["temp_max"]) + " degrer Celsius ";
   }
   if(result['weather'][0]['description'] == 'couvert'){
-    var out = "A " + city + " le ciel est " + result['weather'][0]['description'] + ", la température actuel est de " + Math.round(result['main']['temp']) + " degrer , la température minimal est de " + Math.round(result["main"]["temp_min"]) + " degrer et la température maximal est de " + Math.round(result["main"]["temp_max"]) + " degrer selssuss ";
+    var out = "A " + city + " le ciel est " + result['weather'][0]['description'] + ", la température actuel est de " + Math.round(result['main']['temp']) + " degrer , la température minimal est de " + Math.round(result["main"]["temp_min"]) + " degrer et la température maximal est de " + Math.round(result["main"]["temp_max"]) + " degrer Celsius ";
   }
   if(result['weather'][0]['description'] == 'nuageux'){
-    var out = "A " + city + " le temps est " + result['weather'][0]['description'] + ", la température actuel est de " + Math.round(result['main']['temp']) + " degrer , la température minimal est de " + Math.round(result["main"]["temp_min"]) + " degrer et la température maximal est de " + Math.round(result["main"]["temp_max"]) + " degrer selssuss ";
+    var out = "A " + city + " le temps est " + result['weather'][0]['description'] + ", la température actuel est de " + Math.round(result['main']['temp']) + " degrer , la température minimal est de " + Math.round(result["main"]["temp_min"]) + " degrer et la température maximal est de " + Math.round(result["main"]["temp_max"]) + " degrer Celsius ";
   }
   if(result['weather'][0]['description'] == 'peu nuageux'){
-    var out = "A " + city + " le ciel est couvert, la température actuel est de " + Math.round(result['main']['temp']) + " degrer , la température minimal est de " + Math.round(result["main"]["temp_min"]) + " degrer et la température maximal est de " + Math.round(result["main"]["temp_max"]) + " degrer selssuss ";
+    var out = "A " + city + " le ciel est couvert, la température actuel est de " + Math.round(result['main']['temp']) + " degrer , la température minimal est de " + Math.round(result["main"]["temp_min"]) + " degrer et la température maximal est de " + Math.round(result["main"]["temp_max"]) + " degrer Celsius ";
   }
   if(result['weather'][0]['description'] == 'ciel dégagé'){
-    var out = "A " + city + " le ciel est dégagé, la température actuel est de " + Math.round(result['main']['temp']) + " degrer , la température minimal est de " + Math.round(result["main"]["temp_min"]) + " degrer et la température maximal est de " + Math.round(result["main"]["temp_max"]) + " degrer selssuss ";
+    var out = "A " + city + " le ciel est dégagé, la température actuel est de " + Math.round(result['main']['temp']) + " degrer , la température minimal est de " + Math.round(result["main"]["temp_min"]) + " degrer et la température maximal est de " + Math.round(result["main"]["temp_max"]) + " degrer Celsius ";
   }
+  if(result['weather'][0]['description'] == 'partiellement nuageux'){
+    var out = "A " + city + " le ciel est légérement nuageux, la température actuel est de " + Math.round(result['main']['temp']) + " degrer , la température minimal est de " + Math.round(result["main"]["temp_min"]) + " degrer et la température maximal est de " + Math.round(result["main"]["temp_max"]) + " degrer Celsius ";
+  }
+  
   return out;
 }
