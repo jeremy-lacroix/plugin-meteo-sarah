@@ -1,5 +1,5 @@
 exports.action = function(data, callback, config){
-  // just a test
+  
   if (!data.city){
     var city = "Paris";
   }
