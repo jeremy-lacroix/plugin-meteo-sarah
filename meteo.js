@@ -48,6 +48,10 @@ function text_meteo(result, city){
   if(result['weather'][0]['description'] == 'partiellement nuageux'){
     var out = "A " + city + " le ciel est légérement nuageux, la température actuel est de " + Math.round(result['main']['temp']) + " degrer , la température minimal est de " + Math.round(result["main"]["temp_min"]) + " degrer et la température maximal est de " + Math.round(result["main"]["temp_max"]) + " degrer Celsius ";
   }
+  if(result['weather'][0]['description'] == 'brouillard'){
+    var out = "A " + city + " il y a actuellement du brouillard, la température actuel est de " + Math.round(result['main']['temp']) + " degrer , la température minimal est de " + Math.round(result["main"]["temp_min"]) + " degrer et la température maximal est de " + Math.round(result["main"]["temp_max"]) + " degrer Celsius ";
+  }
+  
   
   return out;
 }
