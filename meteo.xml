@@ -1,0 +1,28 @@
+<grammar version="1.0" xml:lang="fr-FR" mode="voice" root="ruledate" xmlns="http://www.w3.org/2001/06/grammar" tag-format="semantics/1.0">
+  <rule id="ruledate" scope="public">
+    <tag>out.action=new Object(); </tag>
+
+    <item>Sarah</item>
+    
+    <one-of>
+      <item>donne moi la météo</item>
+      <item>quelle est le temps</item>
+      <item>quelle temps fait-il</item>
+      <item>est-ce qu'il pleut</item>
+      <item>comment dois-je m'habiller</item>
+    </one-of>
+
+    <item repeat="0-1">
+      <one-of>
+        <item>a paris<tag>out.action.city="Paris"</tag></item>
+        <item>a toulouse<tag>out.action.city="Toulouse"</tag></item>
+        <item>a toulon<tag>out.action.city="Toulon"</tag></item>
+        <item>a bordeau<tag>out.action.city="Bordeaux"</tag></item>
+      </one-of>
+    </item>
+
+
+    <tag>out.action._attributes.uri="http://127.0.0.1:8080/sarah/meteo";</tag>
+
+  </rule> 
+</grammar>

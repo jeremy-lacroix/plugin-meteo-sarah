@@ -1,0 +1,10 @@
+{
+  "modules" : { 
+    "meteo"  : {
+      "description": "donne la météo du jour",
+      "version": "1",
+	  "Auteur": "Jérémy Lacroix",
+	  "Catégorie": "Speech"
+    }
+  }
+}
