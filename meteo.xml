@@ -9,7 +9,6 @@
       <item>quelle est le temps</item>
       <item>quelle temps fait-il</item>
       <item>est-ce qu'il pleut</item>
-      <item>comment dois-je m'habiller</item>
     </one-of>
 
     <item repeat="0-1">
