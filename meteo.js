@@ -6,9 +6,9 @@ exports.action = function(data, callback, config){
   else{
     var city = data.city;
   }
-  
+
   //Config API
-  var key = "fe5059aef22a26d76f18cbdaffd3750f";
+  var key = config.modules.meteo.key;
   var request = require('request');
   var url = "https://api.openweathermap.org/data/2.5/weather?q=" + city +"&lang=fr&units=metric&APPID=" + key;
   
