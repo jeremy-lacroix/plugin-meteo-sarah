@@ -3,8 +3,8 @@
     "meteo"  : {
       "description": "donne la météo du jour",
       "version": "1",
-      "city": " ",
-      "key": " ",
+      "city": "",
+      "key": "",
 	  "Auteur": "Jérémy Lacroix",
 	  "Catégorie": "Speech"
     }
